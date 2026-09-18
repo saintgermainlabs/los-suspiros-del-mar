@@ -1,0 +1,17 @@
+{
+  "title": "Los Suspiros del Mar | Hotel Boutique en Huanchaco, Perú",
+  "description": "Refugio costero boutique en Huanchaco: cuatro habitaciones acogedoras y un apartamento privado a pasos del mar. Descansa donde el mar suspira. Reserva tu estadía.",
+  "robots": {
+    "index": true
+  },
+  "icons": {
+    "icon": "favicon.svg"
+  },
+  "openGraph": {
+    "image": "https://images.unsplash.com/photo-1785416611427-e29c1f9dbeda?w=1200&h=630&fit=crop&auto=format"
+  },
+  "accessibility": {
+    "addBypassLinks": true,
+    "ignoreReducedMotion": false
+  }
+}

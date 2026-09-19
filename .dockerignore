@@ -1,0 +1,12 @@
+node_modules
+dist
+build
+.git
+.github
+.kilo
+.claude-replay.*
+*.log
+logs
+.env*
+.vite
+.tmp-*

@@ -112,9 +112,87 @@ export const photos: GalleryPhoto[] = [
   },
 ];
 
-// First 9 for the homepage preview (mix of categories)
-export const previewPhotos = [
-  photos[0], photos[6],  photos[10],
-  photos[2], photos[7],  photos[11],
-  photos[4], photos[8],  photos[12],
+// First 9 for the homepage preview — real photos of the property
+export const previewPhotos: GalleryPhoto[] = [
+  {
+    id: "common-room-1",
+    url: "/images/Common_Room_View1.jpg",
+    thumb: "/images/Common_Room_View1.jpg",
+    alt: {
+      en: "Common room with marble breakfast bar and windows onto the garden",
+      es: "Sala común con barra de desayuno de mármol y ventanas al jardín",
+    },
+    category: "terrace",
+  },
+  {
+    id: "upstairs-couch",
+    url: "/images/Upstairs_Couch.jpg",
+    thumb: "/images/Upstairs_Couch.jpg",
+    alt: { en: "Bright living area with red sofa", es: "Sala luminosa con sofá rojo" },
+    category: "rooms",
+  },
+  {
+    id: "garden",
+    url: "/images/Garden.jpg",
+    thumb: "/images/Garden.jpg",
+    alt: {
+      en: "Courtyard garden with red geraniums seen through the window",
+      es: "Jardín interior con geranios rojos visto desde la ventana",
+    },
+    category: "terrace",
+  },
+  {
+    id: "bedroom-1",
+    url: "/images/Bedroom1.jpg",
+    thumb: "/images/Bedroom1.jpg",
+    alt: { en: "Bright bedroom with queen bed", es: "Habitación luminosa con cama matrimonial" },
+    category: "rooms",
+  },
+  {
+    id: "shared-kitchen",
+    url: "/images/SharedKitchen.jpg",
+    thumb: "/images/SharedKitchen.jpg",
+    alt: {
+      en: "Shared kitchen with tiled backsplash and sink",
+      es: "Cocina compartida con azulejos y fregadero",
+    },
+    category: "rooms",
+  },
+  {
+    id: "bed",
+    url: "/images/Bed.jpg",
+    thumb: "/images/Bed.jpg",
+    alt: {
+      en: "Queen bed with white linens and woven textile runner",
+      es: "Cama matrimonial con sábanas blancas y textil andino",
+    },
+    category: "rooms",
+  },
+  {
+    id: "kitchenette",
+    url: "/images/IMG_20260909_163801.jpg",
+    thumb: "/images/IMG_20260909_163801.jpg",
+    alt: {
+      en: "Apartment kitchenette with refrigerator and marble bar counter",
+      es: "Kitchenette del apartamento con refrigeradora y barra de mármol",
+    },
+    category: "rooms",
+  },
+  {
+    id: "bedroom-2",
+    url: "/images/Bedroom2.jpg",
+    thumb: "/images/Bedroom2.jpg",
+    alt: { en: "Bedroom with natural light", es: "Habitación con luz natural" },
+    category: "rooms",
+  },
+  {
+    id: "reading-corner",
+    url: "/images/IMG_20260909_164023.jpg",
+    thumb: "/images/IMG_20260909_164023.jpg",
+    alt: {
+      en: "Cozy reading corner with armchair, lamp and plant",
+      es: "Rincón de lectura acogedor con butaca, lámpara y planta",
+    },
+    category: "terrace",
+  },
 ];

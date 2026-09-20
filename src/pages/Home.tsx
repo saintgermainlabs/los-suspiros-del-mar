@@ -24,9 +24,9 @@ export default function Home({
   ];
 
   const roomPreviews = [
-    { name: tr.rooms.list[0].name, price: tr.rooms.list[0].price, img: "https://images.unsplash.com/photo-1771466883546-a988d001f5ba?w=600&h=400&fit=crop&auto=format" },
-    { name: tr.rooms.list[1].name, price: tr.rooms.list[1].price, img: "https://images.unsplash.com/photo-1770232274485-b35ee5092cbe?w=600&h=400&fit=crop&auto=format" },
-    { name: tr.rooms.list[3].name, price: tr.rooms.list[3].price, img: "https://images.unsplash.com/photo-1770414173168-f6c666501225?w=600&h=400&fit=crop&auto=format" },
+    { name: tr.rooms.list[0].name, price: tr.rooms.list[0].price, img: "/images/Bedroom1.jpg" },
+    { name: tr.rooms.list[1].name, price: tr.rooms.list[1].price, img: "/images/Bedroom2.jpg" },
+    { name: tr.rooms.list[3].name, price: tr.rooms.list[3].price, img: "/images/Bedroom4.jpg" },
   ];
 
   return (

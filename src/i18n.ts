@@ -39,7 +39,7 @@ export const t = {
 
     // Home
     home: {
-      location: "Huanchaco · Northern Coast of Perú",
+      location: "Los Suspiros · Playa Arica, Lurín — Lima, Perú",
       heroSub: "Rest where the sea sighs.",
       heroDesc: "Four cozy rooms and a private apartment, just steps from the ocean.",
       cta1: "Reserve your escape",
@@ -89,7 +89,7 @@ export const t = {
         ["🚌", "Town center", "5-min walk"],
       ],
       getDirections: "Get directions",
-      mapAddress: "Los Lirios, Huanchaco, Perú",
+      mapAddress: "Los Suspiros, Playa Arica, Lurín, Lima, Perú",
       openMaps: "Open in Google Maps",
       ctaTitle: "Ready to exhale?",
       ctaDesc: "Book your stay at Los Suspiros del Mar and let the sea take care of the rest.",
@@ -240,7 +240,7 @@ export const t = {
       whatsappTitle: "Prefer WhatsApp?",
       whatsappLink: "Message us on WhatsApp →",
       findUs: "Find us",
-      address: "Los Lirios, Huanchaco, Perú",
+      address: "Los Suspiros, Playa Arica, Lurín, Lima, Perú",
       openMaps: "Open in Google Maps",
       infoLabels: { phone: "Phone", email: "Email", checkin: "Check-in", checkout: "Check-out" },
       infoValues: { checkin: "From 3:00 PM", checkout: "By 11:00 AM" },
@@ -300,7 +300,7 @@ export const t = {
     },
 
     home: {
-      location: "Huanchaco · Costa Norte del Perú",
+      location: "Los Suspiros · Playa Arica, Lurín — Lima, Perú",
       heroSub: "Descansa donde el mar suspira.",
       heroDesc: "Cuatro acogedoras habitaciones y un apartamento privado, a pasos del océano.",
       cta1: "Reserva tu escapada",
@@ -350,7 +350,7 @@ export const t = {
         ["🚌", "Centro del pueblo", "5 min caminando"],
       ],
       getDirections: "Cómo llegar",
-      mapAddress: "Los Lirios, Huanchaco, Perú",
+      mapAddress: "Los Suspiros, Playa Arica, Lurín, Lima, Perú",
       openMaps: "Abrir en Google Maps",
       ctaTitle: "¿Listo para respirar?",
       ctaDesc: "Reserva tu estadía en Los Suspiros del Mar y deja que el mar se encargue del resto.",
@@ -497,7 +497,7 @@ export const t = {
       whatsappTitle: "¿Prefieres WhatsApp?",
       whatsappLink: "Escríbenos por WhatsApp →",
       findUs: "Encuéntranos",
-      address: "Los Lirios, Huanchaco, Perú",
+      address: "Los Suspiros, Playa Arica, Lurín, Lima, Perú",
       openMaps: "Abrir en Google Maps",
       infoLabels: { phone: "Teléfono", email: "Correo", checkin: "Check-in", checkout: "Check-out" },
       infoValues: { checkin: "Desde las 3:00 PM", checkout: "Hasta las 11:00 AM" },

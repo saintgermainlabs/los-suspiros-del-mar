@@ -5,11 +5,11 @@
 
 export const site = {
   name: "Los Suspiros del Mar",
-  phoneDisplay: "+51 999 000 000",
-  phoneHref: "tel:+51999000000",
-  whatsappNumber: "51999000000", // country code + number, digits only
+  phoneDisplay: "+51 976 666 412",
+  phoneHref: "tel:+51976666412",
+  whatsappNumber: "51976666412", // country code + number, digits only
   email: "hola@lossuspirosdelmar.pe",
-  address: "Los Lirios, Lurin, Lima",
+  address: "Los Suspiros, Playa Arica, Lurín, Lima",
   checkin: "3:00 PM",
   checkout: "11:00 AM",
   social: {

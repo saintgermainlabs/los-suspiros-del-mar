@@ -131,8 +131,8 @@ export default function Gallery({ onNavigate }: { onNavigate: (p: Page) => void 
       {/* Hero */}
       <section className="relative h-72 md:h-96 bg-[#1b4d6e] flex items-center justify-center overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1785416611427-e29c1f9dbeda?w=1600&h=600&fit=crop&auto=format"
-          alt="Vibrant orange sunset over the ocean"
+          src="/images/Common_Area.jpg"
+          alt="Common area of Los Suspiros del Mar"
           className="absolute inset-0 w-full h-full object-cover opacity-50"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#1b4d6e]/30 to-[#1b4d6e]/60" />

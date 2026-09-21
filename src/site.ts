@@ -9,7 +9,7 @@ export const site = {
   phoneHref: "tel:+51976666412",
   whatsappNumber: "51976666412", // country code + number, digits only
   email: "hola@lossuspirosdelmar.pe",
-  address: "Los Suspiros, Playa Arica, Lurín, Lima",
+  address: "Jr. Los Lirios, Mz. W, Lt. 8, Playa Arica, Lurín, Lima",
   checkin: "3:00 PM",
   checkout: "11:00 AM",
   social: {

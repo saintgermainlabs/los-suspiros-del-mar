@@ -72,6 +72,9 @@ export const t = {
       accomTitle: "Our rooms",
       seeAll: "See all rooms",
       viewDetails: "View details →",
+      apartmentsTag: "Private Apartment",
+      apartmentsTitle: "Our apartment",
+      seeApartment: "View apartment details →",
       testimonialsTag: "Guest stories",
       testimonialsTitle: "What our guests say",
       testimonials: [
@@ -333,6 +336,9 @@ export const t = {
       accomTitle: "Nuestras habitaciones",
       seeAll: "Ver todas las habitaciones",
       viewDetails: "Ver detalles →",
+      apartmentsTag: "Apartamento Privado",
+      apartmentsTitle: "Nuestros departamentos",
+      seeApartment: "Ver detalles del departamento →",
       testimonialsTag: "Historias de huéspedes",
       testimonialsTitle: "Lo que dicen nuestros huéspedes",
       testimonials: [

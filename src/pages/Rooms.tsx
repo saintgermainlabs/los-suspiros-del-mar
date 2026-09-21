@@ -3,11 +3,11 @@ import Footer from "../components/Footer";
 import { useLang } from "../LanguageContext";
 
 const imgs = [
-  "https://images.unsplash.com/photo-1771466883546-a988d001f5ba?w=800&h=500&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1770232274485-b35ee5092cbe?w=800&h=500&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1780672823907-07fb6661c31a?w=800&h=500&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1770414173168-f6c666501225?w=800&h=500&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1726732238608-6e341cbb9cc9?w=800&h=500&fit=crop&auto=format",
+  "/images/Bedroom1.jpg",
+  "/images/Bedroom2.jpg",
+  "/images/Bedroom3.jpg",
+  "/images/Bedroom4.jpg",
+  "/images/Appartment_Bedroom_View1.jpg",
 ];
 
 export default function Rooms({ onNavigate }: { onNavigate: (p: Page) => void }) {

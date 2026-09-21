@@ -180,6 +180,62 @@ export default function Home({
         </div>
       </section>
 
+      {/* Featured Apartments */}
+      <section className="bg-white py-20 border-t border-[#ede8df]">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row gap-12 items-center">
+            {/* Left side: Image Grid */}
+            <div className="w-full md:w-1/2 space-y-4">
+              <div className="overflow-hidden rounded-lg h-80 md:h-96 bg-[#d6cdb8] shadow-sm">
+                <img src="/images/Appartment_Bedroom_View1.jpg" alt="Apartment Bedroom" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="overflow-hidden rounded-lg h-40 bg-[#d6cdb8] shadow-sm">
+                  <img src="/images/Appartment_Kitchen.jpg" alt="Apartment Kitchen" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                </div>
+                <div className="overflow-hidden rounded-lg h-40 bg-[#d6cdb8] shadow-sm">
+                  <img src="/images/Upstairs_Couch.jpg" alt="Apartment Living Area" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                </div>
+              </div>
+            </div>
+
+            {/* Right side: Apartment Info */}
+            <div className="w-full md:w-1/2">
+              <p className="text-xs uppercase tracking-widest text-[#4a8fa3] mb-2 font-medium">{h.apartmentsTag}</p>
+              <h2 className="font-display text-4xl text-[#1b4d6e] mb-4">{tr.rooms.list[4].name}</h2>
+              <p className="text-lg italic text-[#4a8fa3] font-light mb-6">{tr.rooms.list[4].tagline}</p>
+              
+              <div className="flex items-center gap-6 text-sm text-[#6b6355] mb-6 border-y border-[#ede8df] py-3">
+                <span className="flex items-center gap-1.5" aria-hidden="true">👥 {tr.rooms.list[4].capacity}</span>
+                <span className="flex items-center gap-1.5" aria-hidden="true">🛏️ {tr.rooms.list[4].bed}</span>
+              </div>
+
+              <p className="text-[#6b6355] leading-relaxed mb-6">
+                {tr.rooms.list[4].desc}
+              </p>
+
+              <div className="flex flex-wrap gap-2 mb-8">
+                {tr.rooms.list[4].amenities.map((a) => (
+                  <span key={a} className="text-xs bg-[#ede8df] text-[#6b6355] px-3 py-1.5 rounded-full font-medium">{a}</span>
+                ))}
+              </div>
+
+              <div className="flex items-center justify-between pt-4 border-t border-[#ede8df]">
+                <div>
+                  <span className="text-sm text-[#6b6355] block">{tr.rooms.from}</span>
+                  <span className="text-3xl font-display text-[#1b4d6e] font-semibold">{tr.rooms.list[4].price}</span>
+                  <span className="text-sm text-[#6b6355] ml-1">/ {tr.rooms.fromNight.replace("/ ", "").replace("/", "")}</span>
+                </div>
+                <button onClick={() => onNavigate("rooms")}
+                  className="bg-[#1b4d6e] hover:bg-[#4a8fa3] text-white text-sm font-medium px-8 py-3.5 rounded transition-colors shadow-sm">
+                  {h.seeApartment}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Gallery preview */}
       <section className="max-w-7xl mx-auto px-6 py-20">
         <div className="flex items-end justify-between mb-8">

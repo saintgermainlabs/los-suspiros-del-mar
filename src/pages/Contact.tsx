@@ -168,17 +168,17 @@ export default function Contact({
         <div className="space-y-8">
           <div>
             <p className="text-xs uppercase tracking-widest text-[#4a8fa3] mb-4 font-medium">{c.findUs}</p>
-            <div className="bg-[#1b4d6e] rounded-lg overflow-hidden h-52 relative flex items-center justify-center">
-              <img src="https://images.unsplash.com/photo-1769535685999-1f210ce50ef6?w=700&h=400&fit=crop&auto=format"
-                alt="Modern hotel on beach at sunset" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover opacity-40" />
-              <div className="relative z-10 text-center text-white">
-                <p className="font-display text-xl mb-1">{site.name}</p>
-                <p className="text-[#a8bdc9] text-sm">{c.address}</p>
-                <a href={mapsLink()} target="_blank" rel="noopener noreferrer"
-                  className="inline-block mt-3 text-xs bg-white/20 hover:bg-white/30 transition-colors px-4 py-2 rounded text-white">
-                  {c.openMaps}
-                </a>
-              </div>
+            <div className="rounded-lg overflow-hidden h-80 w-full border border-[#d6cdb8] shadow-sm bg-[#ede8df]">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3898.179876253657!2d-76.8473174!3d-12.3036704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105a31d68c3dfe5%3A0xd03b063ef7c77cc1!2sLos%20Suspiros%20del%20Mar!5e0!3m2!1sen!2spe!4v1789997546502!5m2!1sen!2spe" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen={true} 
+                loading="lazy" 
+                referrerPolicy="strict-origin-when-cross-origin"
+                title="Los Suspiros del Mar Location Map"
+              ></iframe>
             </div>
           </div>
 

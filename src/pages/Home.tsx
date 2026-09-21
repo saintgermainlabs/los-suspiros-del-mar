@@ -286,17 +286,18 @@ export default function Home({
           <p className="text-xs uppercase tracking-widest text-[#4a8fa3] mb-2 font-medium">{h.testimonialsTag}</p>
           <h2 className="font-display text-4xl text-[#1b4d6e]">{h.testimonialsTitle}</h2>
         </div>
-        <div className="grid md:grid-cols-3 gap-8">
-          {h.testimonials.map((t) => (
-            <div key={t.name} className="bg-white border border-[#d6cdb8] rounded-lg p-7 hover:shadow-md transition-shadow">
-              <div className="flex gap-1 mb-4">{Array.from({ length: t.rating }).map((_, i) => <span key={i} className="text-[#4a8fa3] text-sm">★</span>)}</div>
-              <p className="text-[#6b6355] leading-relaxed italic mb-6 font-display text-base">"{t.text}"</p>
-              <div>
-                <p className="font-medium text-[#1b4d6e] text-sm">{t.name}</p>
-                <p className="text-xs text-[#6b6355]">{t.origin}</p>
-              </div>
-            </div>
-          ))}
+        <div className="w-full">
+          <iframe 
+            id="socialjuice-carousel-suspiros-del-mar-7535" 
+            src="https://embed.socialjuice.io/carousel/10557?s=suspiros-del-mar" 
+            allowFullScreen={true} 
+            allowTransparency={true} 
+            frameBorder="0" 
+            scrolling="no" 
+            width="100%" 
+            height="380px"
+            title="SocialJuice Testimonials Carousel"
+          ></iframe>
         </div>
       </section>
 

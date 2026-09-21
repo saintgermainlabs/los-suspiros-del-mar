@@ -27,10 +27,46 @@ export default function Contact({
   });
   const [sent, setSent] = useState(false);
   const [open, setOpen] = useState<number | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
+    setIsSubmitting(true);
+    setError(null);
+
+    const selectedRoom = form.roomIndex !== "" ? c.roomOptions[Number(form.roomIndex)] : "No preference";
+
+    try {
+      const response = await fetch("https://formspree.io/f/mnpndqvw", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          guests: form.guests,
+          checkin: form.checkin,
+          checkout: form.checkout,
+          room: selectedRoom,
+          message: form.message,
+        }),
+      });
+
+      if (response.ok) {
+        setSent(true);
+      } else {
+        const data = await response.json();
+        setError(data.error || "An error occurred. Please try again.");
+      }
+    } catch (err) {
+      setError("Network error. Please check your connection and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const waBookingMessage = [
@@ -93,13 +129,13 @@ export default function Contact({
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="c-name" className="block text-xs text-[#6b6355] mb-1">{f.name} *</label>
-                  <input id="c-name" required autoComplete="name" value={form.name} onChange={e => setForm({...form, name: e.target.value})}
+                  <input id="c-name" name="name" required autoComplete="name" value={form.name} onChange={e => setForm({...form, name: e.target.value})}
                     placeholder={f.namePlaceholder}
                     className={inputClass} />
                 </div>
                 <div>
                   <label htmlFor="c-email" className="block text-xs text-[#6b6355] mb-1">{f.email} *</label>
-                  <input id="c-email" required type="email" autoComplete="email" value={form.email} onChange={e => setForm({...form, email: e.target.value})}
+                  <input id="c-email" name="email" required type="email" autoComplete="email" value={form.email} onChange={e => setForm({...form, email: e.target.value})}
                     placeholder={f.emailPlaceholder}
                     className={inputClass} />
                 </div>
@@ -107,13 +143,13 @@ export default function Contact({
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="c-phone" className="block text-xs text-[#6b6355] mb-1">{f.phone}</label>
-                  <input id="c-phone" type="tel" autoComplete="tel" value={form.phone} onChange={e => setForm({...form, phone: e.target.value})}
+                  <input id="c-phone" name="phone" type="tel" autoComplete="tel" value={form.phone} onChange={e => setForm({...form, phone: e.target.value})}
                     placeholder={f.phonePlaceholder}
                     className={inputClass} />
                 </div>
                 <div>
                   <label htmlFor="c-guests" className="block text-xs text-[#6b6355] mb-1">{f.guests}</label>
-                  <select id="c-guests" value={form.guests} onChange={e => setForm({...form, guests: e.target.value})}
+                  <select id="c-guests" name="guests" value={form.guests} onChange={e => setForm({...form, guests: e.target.value})}
                     className={inputClass}>
                     {[1,2,3,4,5].map(n => <option key={n} value={n}>{n} {n===1 ? tr.home.guest : tr.home.guestsPlural}</option>)}
                   </select>
@@ -122,18 +158,18 @@ export default function Contact({
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="c-checkin" className="block text-xs text-[#6b6355] mb-1">{f.checkin} *</label>
-                  <input id="c-checkin" required type="date" value={form.checkin} onChange={e => setForm({...form, checkin: e.target.value})}
+                  <input id="c-checkin" name="checkin" required type="date" value={form.checkin} onChange={e => setForm({...form, checkin: e.target.value})}
                     className={inputClass} />
                 </div>
                 <div>
                   <label htmlFor="c-checkout" className="block text-xs text-[#6b6355] mb-1">{f.checkout} *</label>
-                  <input id="c-checkout" required type="date" value={form.checkout} min={form.checkin || undefined} onChange={e => setForm({...form, checkout: e.target.value})}
+                  <input id="c-checkout" name="checkout" required type="date" value={form.checkout} min={form.checkin || undefined} onChange={e => setForm({...form, checkout: e.target.value})}
                     className={inputClass} />
                 </div>
               </div>
               <div>
                 <label htmlFor="c-room" className="block text-xs text-[#6b6355] mb-1">{f.room}</label>
-                <select id="c-room" value={form.roomIndex} onChange={e => setForm({...form, roomIndex: e.target.value})}
+                <select id="c-room" name="room" value={form.roomIndex} onChange={e => setForm({...form, roomIndex: e.target.value})}
                   className={inputClass}>
                   <option value="">{f.noPreference}</option>
                   {c.roomOptions.map((o, i) => <option key={o} value={i}>{o}</option>)}
@@ -141,13 +177,20 @@ export default function Contact({
               </div>
               <div>
                 <label htmlFor="c-message" className="block text-xs text-[#6b6355] mb-1">{f.message}</label>
-                <textarea id="c-message" value={form.message} onChange={e => setForm({...form, message: e.target.value})}
+                <textarea id="c-message" name="message" value={form.message} onChange={e => setForm({...form, message: e.target.value})}
                   rows={3} placeholder={f.messagePlaceholder}
                   className={`${inputClass} resize-none`} />
               </div>
-              <button type="submit"
-                className="w-full bg-[#1b4d6e] hover:bg-[#4a8fa3] text-white font-medium py-3.5 rounded transition-colors text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4a8fa3]">
-                {f.submit}
+
+              {error && (
+                <div className="text-red-600 bg-red-50 border border-red-200 rounded px-4 py-3 text-sm text-center">
+                  {error}
+                </div>
+              )}
+
+              <button type="submit" disabled={isSubmitting}
+                className="w-full bg-[#1b4d6e] hover:bg-[#4a8fa3] text-white font-medium py-3.5 rounded transition-colors text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4a8fa3] disabled:opacity-50 disabled:cursor-not-allowed">
+                {isSubmitting ? "..." : f.submit}
               </button>
               <p className="text-xs text-[#6b6355] text-center">{f.note}</p>
             </form>
